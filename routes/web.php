@@ -6,3 +6,6 @@ Route::get('/', function () {
     return view('login/login');
 });
 
+Route::get('/coba', function () {
+    return view('coba');
+});
