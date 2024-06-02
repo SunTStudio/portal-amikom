@@ -18,7 +18,7 @@
     <section id="login">
         <div class="conteiner">
             <div class="row justify-content-center">
-                <div class="col-lg-4 col-10 rounded bg-white p-5 m-5">
+                <div class="col-lg-4 col-10 rounded bg-white p-5 m-4">
                     <div class="header text-center ">
                         <img src="/img/logo.png" alt="" class="img-fluid">
                         <p class="fw-bold h5 p-3">PORTAL AMIKOM</p>
@@ -37,7 +37,7 @@
                         </div>
                     </form>
                     <div id="sign-up-by-google" class="text-center">
-                        <p class="fw-bold"><small>OR</small></p>
+                        <p class="fw-bold m-2"><small>OR</small></p>
                         <a href="/sign-up-google" class="btn btn-white border border-secondary ps-4 pe-4 fw-medium text-center"><i class="fa-brands fa-google"></i> Sign Up By Goggle</a>
                     </div>
                 </div>

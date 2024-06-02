@@ -1,0 +1,15 @@
+*{
+    font-family: 'montserrat', sans-serif;
+
+}
+
+#main-menu a{
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+#form-custom{
+    font-size: 0.8rem;
+    color: #969AB8;
+}
+

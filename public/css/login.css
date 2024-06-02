@@ -4,5 +4,5 @@
 
 body{
     background-image: url('/img/bg-login.png');
-    object-fit: fit;
+    object-fit: cover;
 }
