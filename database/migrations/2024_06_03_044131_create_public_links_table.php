@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('public_links', function (Blueprint $table) {
-            $table->id();
+            $table->id('Id_Public');
+            $table->string('Nama_Link');
+            $table->string('Source_Link');
+            $table->string('Deskripsi');
             $table->timestamps();
         });
     }
