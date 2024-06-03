@@ -23,13 +23,15 @@
                         <img src="/img/logo.png" alt="" class="img-fluid">
                         <p class="fw-bold h5 p-3">PORTAL AMIKOM</p>
                     </div>
-                    <form action="/proses-login" method="POST" style="color: #969AB8;">
+                    <form action="{{ route('login') }}" method="POST" style="color: #969AB8;">
+                        @csrf
+                        @method('POST')
                         <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput"><i class="fa-regular fa-envelope"></i> Email address</label>
+                        <input type="text" name="nim" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput"><i class="fa-regular fa-envelope"></i> NIM Number</label>
                         </div>
                         <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
                         <label for="floatingPassword"><i class="fa-solid fa-key"></i> Password</label>
                         </div>
                         <div id="bottom" class="text-center m-3">
@@ -44,7 +46,16 @@
             </div>
         </div>
     </section>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        @if (SESSION('error'))
+        <script>
+                Swal.fire({
+                    icon: "error",
+                    title: "Maaf",
+                    text: "{{ SESSION('error') }}",
+                });
+    </script>
+        @endif
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
