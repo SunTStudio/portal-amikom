@@ -12,4 +12,8 @@ class Kategori extends Model
     protected $fillable = [
         'nama_kategori',
     ];
+
+    public function custom_link(){
+        return $this->hasMany(Custom_Link::class, 'id_kategori_link','id_kategori');
+    }
 }

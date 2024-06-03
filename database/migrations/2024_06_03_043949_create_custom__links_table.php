@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('custom_links', function (Blueprint $table) {
             $table->id('id_custom');
+            $table->engine = 'InnoDB';
             $table->foreignId('id_pengguna')->constrained('users')->onDelete('cascade');
             $table->string('Nama_Link');
             $table->string('Source_Link');
             $table->string('Deskripsi');
+             $table->foreignId('id_kategori_link')->references('id_kategori')->on('kategoris')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('custom__links');
+        Schema::dropIfExists('custom_links');
     }
 };

@@ -14,14 +14,19 @@ class Custom_Link extends Model
         'id_pengguna',
         'Source_Link',
         'Deskripsi',
+        'id_kategori_link',
     ];
 
 
     public function user(){
-        $this->belongsTo(User::class, 'id_pengguna');
+        return $this->belongsTo(User::class, 'id_pengguna');
+    }
+
+    public function kategoris(){
+        return $this->belongsTo(Kategori::class, 'id_kategori_link', 'id_kategori');
     }
 
     public function public_link(){
-        $this->hasMany(Public_link::class, 'id_custom_link');
+        return $this->hasMany(Public_link::class, 'id_custom_link');
     }
 }
