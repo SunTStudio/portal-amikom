@@ -333,6 +333,16 @@
   </section>
   <!-- Container end -->
   <!-- Script Bootstrap -->
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        @if (SESSION('success'))
+        <script>
+                Swal.fire({
+                    icon: "success",
+                    title: "Berhasil",
+                    text: "{{ SESSION('success') }}",
+                });
+    </script>
+        @endif
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

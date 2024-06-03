@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('custom_links', function (Blueprint $table) {
-            $table->id('id_custom');
-            $table->foreignId('id_pengguna')->constrained('users')->onDelete('cascade');
-            $table->string('Nama_Link');
-            $table->string('Source_Link');
-            $table->string('Deskripsi');
+        //
+        Schema::create('kategoris', function (Blueprint $table) {
+            $table->id('id_kategori');
+            $table->string('nama_kategori');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('custom__links');
+        //
     }
 };
