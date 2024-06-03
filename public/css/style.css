@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    /* color: white; */
+}
+
+/* Custom Bootstrap Komponen Start */
+.btn-primary {
+    color: #fff;
+    background-color: #5932EA;
+    border-color: #357ebd; /*set the color you want here*/
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #4621ca;
+    border-color: #285e8e; /*set the color you want here*/
+}
+
+.btn-secondary {
+    color: #9197B3;
+    background-color: #fff;
+    border-color: #9197B3; /*set the color you want here*/
+}
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open>.dropdown-toggle.btn-secondary {
+    color: #9197B3;
+    background-color: #fff;
+    border-color: #9197B3; /*set the color you want here*/
+}
+/* Custom Bootstrap Komponen End */
+
+/* Sidebar Start */
+.sidebar {
+    background-color: white;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    border-right: 2px solid #ececec;
+}
+
+.sidebar .logo {
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sidebar .main {
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.sidebar .navigasi {
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.sidebar .navigasi .btn {
+    justify-content: space-between;
+}
+
+.sidebar .navigasi .btn .link-enable {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar .navigasi .btn .link-disable {
+    color: #9197B3;
+    text-decoration: none;
+}
+/* Sidebar End */
+
+/* Konten Start */
+.konten {
+    background-color: #FFE7E7;
+}
+
+/* Navbar Start */
+.konten .navbar {
+    background-color: white !important;
+}
+
+.konten .navbar .profile {
+    gap: 1rem;
+    align-items: center;
+}
+
+.konten .navbar .profile .name {
+    font-weight: bold;
+    font-size: medium;
+}
+
+.konten .navbar .profile .email {
+    color: #9197B3;
+    font-size: small;
+}
+/* Navbar End */
+
+/* Main-Konten Start */
+.konten .main-konten {
+    padding: 2rem 3rem;
+}
+
+.konten .main-konten .tautan-amikom .list-card .col,
+.konten .main-konten .pintasan-tautan .list-card .col,
+.konten .main-konten .tautan-umum .list-card .col {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem 0;
+}
+
+.konten .main-konten .tautan-amikom .list-card .card,
+.konten .main-konten .pintasan-tautan .list-card .card,
+.konten .main-konten .tautan-umum .list-card .card {
+    width: 19rem;
+}
+
+.konten .main-konten .tautan-amikom .judul-konten,
+.konten .main-konten .pintasan-tautan .judul-konten,
+.konten .main-konten .tautan-umum .judul-konten {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.konten .main-konten .tautan-amikom .judul-konten .dropdown .btn,
+.konten .main-konten .pintasan-tautan .judul-konten .dropdown .btn,
+.konten .main-konten .tautan-umum .judul-konten .dropdown .btn
+ {
+    background-color:#5932EA ;
+    color: white;
+}
+
+.konten .main-konten .tautan-amikom .card .card-body .status {
+    background-color: #7430A9;
+    color: white;
+    padding: .3rem .7rem;
+    font-size: small;
+}
+
+.konten .main-konten .tautan-umum .card .card-body .status {
+    background-color: #34A853;
+    color: white;
+    padding: .3rem .7rem;
+    font-size: small;
+}
+
+.konten .main-konten .pintasan-tautan .card .card-body .status {
+    background-color: #FBBC05;
+    color: white;
+    padding: .3rem .7rem;
+    font-size: small;
+}
+/* Main-Konten End */
+/* Konten End */
+
+/* Konten Custom Link Start */
+.konten .main-konten .pintasan-tautan .search form{
+    width: 50%;
+}
+/* Konten Custom Link End */
+
+/* Form Custom Link Start */
+.konten .main-konten .link-form,
+.konten .main-konten .kategori {
+    background-color: white;
+    border-radius: 1rem;
+    color: #8768F8;
+}
+
+.konten .main-konten .link-form .form-main form {
+    flex-direction: column;
+}
+/* Form Custom Link End */
