@@ -12,10 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('public_links', function (Blueprint $table) {
-            $table->id('Id_Public');
-            $table->string('Nama_Link');
-            $table->string('Source_Link');
-            $table->string('Deskripsi');
+            $table->id('id_public');
+            $table->unsignedBigInteger('id_pengguna_link'); // Changed to unsignedBigInteger
+            $table->unsignedBigInteger('id_custom_link');
+            $table->foreign('id_pengguna_link')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_custom_link')->references('id_custom')->on('custom_links')->onDelete('cascade');
             $table->timestamps();
         });
     }

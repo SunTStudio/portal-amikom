@@ -26,6 +26,10 @@ class User extends Authenticatable
         $this->hasMany(Custom_Link::class, 'id_pengguna');
     }
 
+    public function public_link(){
+        $this->hasMany(Public_link::class, 'id_pengguna_link');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
