@@ -34,10 +34,10 @@
               </div>
               <i class="fa-solid fa-chevron-right"></i>
             </a>
-            <a href="#" class="enable btn btn-primary d-flex align-items-center px-3 py-2">
+            <a href="/form" class="disable btn btn-secondary d-flex align-items-center px-3 py-2">
               <div>
                 <i class="fa-solid fa-user border border-2 p-1 me-2 rounded"></i>
-                <span class="link-enable"></i>Create New Link</span>
+                <span class="link-disable"></i>Create New Link</span>
               </div>
               <i class="fa-solid fa-chevron-right"></i>
             </a>
@@ -48,14 +48,14 @@
               </div>
               <i class="fa-solid fa-chevron-right"></i>
             </a>
-            <a href="" class="disable btn btn-secondary d-flex align-items-center px-3 py-2">
+            <a href="#" class="enable btn btn-primary d-flex align-items-center px-3 py-2">
               <div>
                 <i class="fa-solid fa-earth-asia border border-2 p-1 me-2 rounded"></i>
-                <span class="link-disable"></i>Public Link</span>
+                <span class="link-enable"></i>Public Link</span>
               </div>
               <i class="fa-solid fa-chevron-right"></i>
             </a>
-            <a href="" class="disable btn btn-secondary d-flex align-items-center px-3 py-2">
+            <a href="/umum" class="disable btn btn-secondary d-flex align-items-center px-3 py-2">
               <div>
                 <i class="fa-solid fa-share border border-2 p-1 me-2 rounded"></i>
                 <sapn class="link-disable"></i>Sharing Link</span>
@@ -89,63 +89,90 @@
 
         <!-- Main Konten Start -->
         <section class="container-fluid main-konten">
-          <div class="row">
-            <div class="link-form col-6 p-5">
-              <h5 class="mb-5">BUAT CUSTOM LINK BARU</h5>
-              <div class="form-main">
-                <form action="" class="d-flex flex-direction-coloumn">
-                  <div class="mb-3">
-                    <label for="judul" id>Judul Link</label>
-                    <input type="text" class="form-control" placeholder="Judul Link">
-                  </div>
-                  <div class="mb-3">
-                    <label for="link">Link Asli</label>
-                    <input type="text" class="form-control" placeholder="Link Asli">
-                  </div>
-                  <div class="mb-5">
-                    <label for="deskripsi">Deskripsi Link</label>
-                    <textarea type="text" class="form-control" placeholder="Deskripsi Link"></textarea>
-                  </div>
-                  <button class="btn btn-primary">Buat Custom Link</button>
-                </form>
+
+          <!-- Tautan Amikom Start -->
+          <div class="tautan-amikom mb-4">
+            <div class="judul-konten d-flex mb-4">
+              <h4>Tautan AMIKOM</h4>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Kategori
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
               </div>
             </div>
-            <div class="kategori col-5 p-5">
-              <h5 class="mb-5">PILIH KATEGORI</h5>
-              <div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="akademik">
-                  <label class="form-check-label" for="akademik">
-                    Akademik
-                  </label>
+            <div class="search d-flex justify-content-center mb-4">
+              <form class="" role="search">
+                <input class="form-control me-2 text-align-center" type="search" placeholder="Search your Custom Link here..." aria-label="Search">
+                <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+              </form>
+            </div>
+            <!-- List Card Start -->
+            <div class="row list-card">
+              <div class="col d-flex">
+                <div class="card">
+                  <div class="card-body">
+                    <div>
+                      <h5 class="card-title">D3-Manajemen Informatika</h5>
+                      <span class="status rounded">Akademik</span>
+                    </div>
+                    <hr>
+                    <p>Informasi:</p>
+                    <div class="link-informasi">
+                      <ul>
+                        <li>
+                          <a href="https://mi.amikom.ac.id">Menu Utama</a>
+                        </li>
+                        <li>
+                          <a href="https://mi.amikom.ac.id/page/kurikulum">Kurikulum</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="custom" checked>
-                  <label class="form-check-label" for="custom">
-                    Custom
-                  </label>
+                <div class="card">
+                  <div class="card-body">
+                    <div>
+                      <h5 class="card-title">Ungu.in</h5>
+                      <span class="status rounded">Akademik</span>
+                    </div>
+                    <hr>
+                    <p>Informasi:</p>
+                    <div class="link-informasi">
+                      <ul>
+                        <li>
+                          <a href="https://app.ungu.in/">Menu Utama</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="umum">
-                  <label class="form-check-label" for="umum">
-                    Umum
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="jurnal">
-                  <label class="form-check-label" for="jurnal">
-                    Jurnal
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="pribadi">
-                  <label class="form-check-label" for="pribadi">
-                    Pribadi
-                  </label>
+                <div class="card">
+                  <div class="card-body">
+                    <div>
+                      <h5 class="card-title">D3-Manajemen Informatika</h5>
+                      <span class="status rounded">Akademik</span>
+                    </div>
+                    <hr>
+                    <p>Informasi:</p>
+                    <div class="link-informasi">
+                      <ul>
+                        <li>
+                          <a href="https://daak.amikom.ac.id/">Menu Utama</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <!-- List Card End -->
           </div>
+          <!-- Tautan Amikom End -->
 
         </section>
         <!-- Main Konten End -->

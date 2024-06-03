@@ -15,6 +15,26 @@ class PublicLinkController extends Controller
         //
     }
 
+    public function dashboard()
+    {
+        return view('portal/dashboard');
+    }
+
+    public function akademik()
+    {
+        return view('portal/akademik');
+    }
+
+    public function custom_link()
+    {
+        return view('portal/custom-link');
+    }
+
+    public function umum()
+    {
+        return view('portal/umum');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
