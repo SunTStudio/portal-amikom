@@ -16,10 +16,15 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $primaryKey = 'id';
     protected $fillable = [
         'nim',
         'password',
     ];
+
+    public function custom_link(){
+        $this->hasMany(Custom_Link::class, 'id_pengguna');
+    }
 
     /**
      * The attributes that should be hidden for serialization.
