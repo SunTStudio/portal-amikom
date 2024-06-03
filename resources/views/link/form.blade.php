@@ -51,15 +51,15 @@
 
     <section id="konten">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-3 bg-white pt-5 pb-5" id="main-menu">
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-10 bg-white pt-5 pb-5" id="main-menu">
                     <p class="btn btn-primary text-light d-flex justify-content-between align-items-center me-3 "><a href="#" class=" text-light fw-medium m-1 ms-3 ms-3"><i class="bi bi-key border border-2 me-2  ps-1 pe-1 rounded"></i> Portal AMIKOM Link </a><span><i class="bi bi-arrow-right-square ms-3 me-1"></i></span></p>
                     <p class="d-flex justify-content-between align-items-center me-3 "><a href="#" class="text-secondary m-1 ms-3 ms-3"><i class=" me-2 bi bi-person-fill-up border border-2  ps-1 pe-1 rounded"></i> Create New Link </a><span class="text-secondary"><i class="bi bi-arrow-right-square ms-3 me-1"></i></span> </p>
                     <p class="d-flex justify-content-between align-items-center me-3 "><a href="#" class="text-secondary m-1 ms-3 ms-3"><i class=" me-2 bi bi-key border border-2  ps-1 pe-1 rounded"></i> Custom Link </a><span class="text-secondary"><i class="bi bi-arrow-right-square ms-3 me-1"></i></span> </p>
                     <p class="d-flex justify-content-between align-items-center me-3 "><a href="#" class="text-secondary m-1 ms-3 ms-3"><i class=" me-2 bi bi-key border border-2  ps-1 pe-1 rounded"></i> Public Link </a><span class="text-secondary"><i class="bi bi-arrow-right-square ms-3 me-1"></i></span> </p>
                     <p class="d-flex justify-content-between align-items-center me-3 "><a href="#" class="text-secondary m-1 ms-3 ms-3"><i class=" me-2 bi bi-key border border-2  ps-1 pe-1 rounded"></i> Sharing Link </a><span class="text-secondary"><i class="bi bi-arrow-right-square ms-3 me-1"></i></span> </p>
                 </div>
-                <div class="col-9">
+                <div class="col-lg-9 col-12">
                     <div class="row p-4 justify-content-center">
                         <div class="col-7 rounded p-5 bg-white m-3">
                             <p class="h5 fw-bold text-primary mb-3">Buat Custom Link Baru</p>

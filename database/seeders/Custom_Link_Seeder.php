@@ -18,5 +18,15 @@ class Custom_Link_Seeder extends Seeder
             'Source_Link' => 'https://auth.amikom.ac.id/mhs',
             'Deskripsi' => 'Merupakan Website Mahasiswa Amikom yang digunakan untuk keperluan akademis Mahasiswa.',
         ]);
+        Custom_Link::create([
+            'Nama_Link' => 'Github',
+            'Source_Link' => 'https://github.com/',
+            'Deskripsi' => 'Merupakan Website Kolaborasi tim untuk mengerjakan project programing bersama.',
+        ]);
+        Custom_Link::create([
+            'Nama_Link' => 'Template Figma UI Form',
+            'Source_Link' => 'https://www.figma.com/',
+            'Deskripsi' => 'Berikut Template UI Form yang menarik.',
+        ]);
     }
 }
