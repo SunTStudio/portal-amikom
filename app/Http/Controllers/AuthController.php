@@ -21,7 +21,7 @@ class AuthController extends Controller
         ]);
         
         if(Auth::attempt(['nim'=> $request->nim,'password' => $request->password])){
-            return redirect()->route('portal.form')->with('success','berhasil login');
+            return redirect()->route('portal.dashboard')->with('success','Anda berhasil login!');
         }else{
             return back()->with('error','Periksa Kembali Nim atau Password Anda!');
         }
