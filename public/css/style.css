@@ -112,7 +112,8 @@
 .konten .main-konten .tautan-amikom .list-card .card,
 .konten .main-konten .pintasan-tautan .list-card .card,
 .konten .main-konten .tautan-umum .list-card .card {
-    width: 19rem;
+    width: 18rem;
+    text-decoration: none;
 }
 
 .konten .main-konten .tautan-amikom .judul-konten,

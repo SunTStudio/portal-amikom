@@ -111,7 +111,7 @@
             <!-- List Card Start -->
             <div class="row list-card">
               <div class="col d-flex">
-                <div class="card">
+                <a href="https://mi.amikom.ac.id" class="card">
                   <div class="card-body">
                     <div>
                       <h5 class="card-title">D3-Manajemen Informatika</h5>
@@ -120,18 +120,11 @@
                     <hr>
                     <p>Informasi:</p>
                     <div class="link-informasi">
-                      <ul>
-                        <li>
-                          <a href="https://mi.amikom.ac.id">Menu Utama</a>
-                        </li>
-                        <li>
-                          <a href="https://mi.amikom.ac.id/page/kurikulum">Kurikulum</a>
-                        </li>
-                      </ul>
+                      <p>Berisi informasi mengenai akademik dari prodi D3-Manajemen Informatika seperti KRS, Magang, Akademik</p>
                     </div>
                   </div>
-                </div>
-                <div class="card">
+                </a>
+                <a href="https://app.ungu.in" class="card">
                   <div class="card-body">
                     <div>
                       <h5 class="card-title">Ungu.in</h5>
@@ -140,15 +133,11 @@
                     <hr>
                     <p>Informasi:</p>
                     <div class="link-informasi">
-                      <ul>
-                        <li>
-                          <a href="https://app.ungu.in/">Menu Utama</a>
-                        </li>
-                      </ul>
+                      <p>Berisi informasi mengenai akademik dari prodi D3-Manajemen Informatika seperti KRS, Magang, Akademik</p>
                     </div>
                   </div>
-                </div>
-                <div class="card">
+                </a>
+                <a href="https://daak.amikom.ac.id/" class="card">
                   <div class="card-body">
                     <div>
                       <h5 class="card-title">D3-Manajemen Informatika</h5>
@@ -157,14 +146,10 @@
                     <hr>
                     <p>Informasi:</p>
                     <div class="link-informasi">
-                      <ul>
-                        <li>
-                          <a href="https://daak.amikom.ac.id/">Menu Utama</a>
-                        </li>
-                      </ul>
+                      <p>Berisi informasi mengenai akademik di Universitas Amikom Yogyakarta seperti penjadwalan kuliah, KRS, jadwal akademik, yudisium, dan administrasi</p>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
             <!-- List Card End -->
@@ -194,7 +179,7 @@
             <!-- List Card Start -->
             <div class="row list-card">
               <div class="col d-flex">
-                <div class="card">
+                <a href="https://chatgpt.com/" class="card">
                   <div class="card-body">
                     <div>
                       <h5 class="card-title">Chat GPT</h5>
@@ -203,14 +188,10 @@
                     <hr>
                     <p>Informasi:</p>
                     <div class="link-informasi">
-                      <ul>
-                        <li>
-                          <a href="https://chatgpt.com/">Menu Utama</a>
-                        </li>
-                      </ul>
+                      <p></p>
                     </div>
                   </div>
-                </div>
+                </a>
                 <div class="card">
                   <div class="card-body">
                     <div>
@@ -333,16 +314,16 @@
   </section>
   <!-- Container end -->
   <!-- Script Bootstrap -->
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        @if (SESSION('success'))
-        <script>
-                Swal.fire({
-                    icon: "success",
-                    title: "Berhasil",
-                    text: "{{ SESSION('success') }}",
-                });
-    </script>
-        @endif
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  @if (SESSION('success'))
+  <script>
+    Swal.fire({
+      icon: "success",
+      title: "Berhasil",
+      text: "{{ SESSION('success') }}",
+    });
+  </script>
+  @endif
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
