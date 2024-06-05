@@ -20,7 +20,7 @@
   <section class="container-fluid">
     <div class="row">
       <!-- Sidebar Start -->
-      <div class="col-3 sidebar d-flex py-4 px-5">
+      <div class="col-lg-3 col-md-5 sidebar d-flex py-4 px-5">
         <div class="main d-flex">
           <div class="logo d-flex">
             <img src="/img/Logo_Amikom.png" alt="Logo Amikom" />
@@ -64,14 +64,14 @@
             </a>
           </div>
         </div>
-        <div class="d-flex justify-content-center">
+        <!-- <div class="d-flex justify-content-center">
           <a href="" class="keluar btn btn-danger px-4">Keluar</a>
-        </div>
+        </div> -->
       </div>
       <!-- Sidebar End -->
 
       <!-- Konten Start -->
-      <section class="col-9 konten p-0">
+      <section class="col-lg-9 col-md-7 konten p-0">
         <!-- Navbar Start -->
         <nav class="navbar bg-body-tertiary px-4 py-3 bg-white">
           <div class="container-fluid">
@@ -85,6 +85,12 @@
               <div>
                 <p class="name m-0">Erling Haland</p>
                 <p class="email m-0">erlinghaland@students.amikom.ac.id</p>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Log Out</a></li>
+                </ul>
               </div>
             </div>
           </div>
@@ -192,7 +198,7 @@
                     </div>
                   </div>
                 </a>
-                <div class="card">
+                <a href="https://app.ungu.in/" class="card">
                   <div class="card-body">
                     <div>
                       <h5 class="card-title">Ungu.in</h5>
@@ -201,15 +207,11 @@
                     <hr>
                     <p>Informasi:</p>
                     <div class="link-informasi">
-                      <ul>
-                        <li>
-                          <a href="https://app.ungu.in/">Menu Utama</a>
-                        </li>
-                      </ul>
+                      <p></p>
                     </div>
                   </div>
-                </div>
-                <div class="card">
+                </a>
+                <a class="card">
                   <div class="card-body">
                     <div>
                       <h5 class="card-title">D3-Manajemen Informatika</h5>
@@ -218,14 +220,10 @@
                     <hr>
                     <p>Informasi:</p>
                     <div class="link-informasi">
-                      <ul>
-                        <li>
-                          <a href="https://daak.amikom.ac.id/">Menu Utama</a>
-                        </li>
-                      </ul>
+                      <p></p>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
             <!-- List Card End -->
@@ -250,7 +248,7 @@
             <!-- List Card Start -->
             <div class="row list-card">
               <div class="col d-flex">
-                <div class="card">
+                <a href="" class="card">
                   <div class="card-body">
                     <div>
                       <h5 class="card-title">Chat GPT</h5>
@@ -259,15 +257,11 @@
                     <hr>
                     <p>Informasi:</p>
                     <div class="link-informasi">
-                      <ul>
-                        <li>
-                          <a href="https://chatgpt.com/">Menu Utama</a>
-                        </li>
-                      </ul>
+                      <p></p>
                     </div>
                   </div>
-                </div>
-                <div class="card">
+                </a>
+                <a href="https://app.ungu.in/" class="card">
                   <div class="card-body">
                     <div>
                       <h5 class="card-title">Ungu.in</h5>
@@ -276,15 +270,11 @@
                     <hr>
                     <p>Informasi:</p>
                     <div class="link-informasi">
-                      <ul>
-                        <li>
-                          <a href="https://app.ungu.in/">Menu Utama</a>
-                        </li>
-                      </ul>
+                      <p></p>
                     </div>
                   </div>
-                </div>
-                <div class="card">
+                </a>
+                <a href="https://daak.amikom.ac.id/" class="card">
                   <div class="card-body">
                     <div>
                       <h5 class="card-title">D3-Manajemen Informatika</h5>
@@ -293,14 +283,10 @@
                     <hr>
                     <p>Informasi:</p>
                     <div class="link-informasi">
-                      <ul>
-                        <li>
-                          <a href="https://daak.amikom.ac.id/">Menu Utama</a>
-                        </li>
-                      </ul>
+                      <p></p>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
             <!-- List Card End -->
