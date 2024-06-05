@@ -40,7 +40,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#"><i class="bi bi-person-gear"></i> Profile</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="bi bi-door-open"></i> Log Out</a></li>
+                                <li><a class="dropdown-item" href="{{ route('portal.logout') }}"><i class="bi bi-door-open"></i> Log Out</a></li>
                             </ul>
                         </li>
                         </ul>
