@@ -14,6 +14,18 @@ class Default_Link_Seeder extends Seeder
     public function run(): void
     {
         Default_Link::create([
+            'Nama_Link' => 'Mahasiswa Amikom Yogyakarta',
+            'Source_Link' => 'https://auth.amikom.ac.id/mhs',
+            'Deskripsi' => 'Website informasi untuk mahasiswa seperti materi, krs, ujian, jadwal perkuliahan'
+        ]);
+
+        Default_Link::create([
+            'Nama_Link' => 'Waskita Amikom Yogyakarta',
+            'Source_Link' => 'https://waskita.amikom.ac.id/',
+            'Deskripsi' => 'Website perkuliahan untuk tugas dan materi'
+        ]);
+
+        Default_Link::create([
             'Nama_Link' => 'Universitas Amikom Yogyakarta',
             'Source_Link' => 'https://home.amikom.ac.id/',
             'Deskripsi' => 'Website informasi mengenai Universitas AMIKOM Yogyakarta'

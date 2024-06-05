@@ -64,9 +64,9 @@
             </a>
           </div>
         </div>
-        <div class="d-flex justify-content-center">
+        <!-- <div class="d-flex justify-content-center">
           <a href="" class="keluar btn btn-danger px-4">Keluar</a>
-        </div>
+        </div> -->
       </div>
       <!-- Sidebar End -->
 
@@ -81,6 +81,12 @@
               <div>
                 <p class="name m-0">Erling Haland</p>
                 <p class="email m-0">erlinghaland@students.amikom.ac.id</p>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Log Out</a></li>
+                </ul>
               </div>
             </div>
           </div>
