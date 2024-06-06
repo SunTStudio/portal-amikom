@@ -19,7 +19,7 @@ class PublicLinkController extends Controller
 
     public function dashboard()
     {
-        $data_akademik = Default_link::get();
+        $data_akademik = Default_link::simplePaginate(6);
         // $data_custom = Custom_Link::get();
 
         return view('portal/dashboard',compact('data_akademik'));
@@ -32,7 +32,7 @@ class PublicLinkController extends Controller
 
     public function akademik()
     {
-        $data_akademik = Default_link::get();
+        $data_akademik = Default_link::simplePaginate(6);
         return view('portal/akademik',compact('data_akademik'));
     }
 

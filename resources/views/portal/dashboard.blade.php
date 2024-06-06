@@ -116,7 +116,7 @@
             </div>
             <!-- List Card Start -->
             <div class="row list-card">
-              <div class="col d-flex">
+              <div class="col d-flex mb-4">
                 @foreach ($data_akademik as $da)
                 <a href="{{ $da->Source_Link }}" class="card">
                   <div class="card-body">
@@ -132,6 +132,17 @@
                   </div>
                 </a>
                 @endforeach
+              </div>
+              <div class="d-flex justify-content-between">
+                <div class="d-flex gap-2">
+                  <p>Showing</p>
+                  {{ $data_akademik->firstItem() }}
+                  <p>to</p>
+                  {{ $data_akademik->lastItem() }}
+                </div>
+                <div>
+                  {{ $data_akademik->links() }}
+                </div>
               </div>
             </div>
             <!-- List Card End -->
