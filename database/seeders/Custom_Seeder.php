@@ -13,10 +13,13 @@ class Custom_Seeder extends Seeder
      */
     public function run(): void
     {
-        Custom_Link::create([
+        Custom::create([
+            'id_pengguna' => 1,
             'Nama_Link' => 'Chat GPT',
             'Source_Link' => 'https://chatgpt.com/',
             'Deskripsi' => 'Merupakan Website AI untuk membantu mahasiswa.',
+            'id_kategori_link' => '3',
+            ]);
         Custom::create([
             'id_pengguna' => 1,
             'Nama_Link' => 'Chat GPT',
