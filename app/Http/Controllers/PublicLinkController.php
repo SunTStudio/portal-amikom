@@ -2,12 +2,8 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use App\Models\Default_link;
-use App\Models\Custom_Link;
-=======
 use App\Models\Custom;
->>>>>>> 6600dc5479b876a8600f61c773b087e4bfc19a69
 use App\Models\Public_link;
 use Illuminate\Http\Request;
 
