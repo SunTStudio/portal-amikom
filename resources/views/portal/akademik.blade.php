@@ -119,85 +119,23 @@
             </div>
             <!-- List Card Start -->
             <div class="row list-card">
-            <div class="col d-flex">
-                <a href="https://mi.amikom.ac.id" class="card">
+              <div class="col d-flex">
+                @foreach ($data_akademik as $da)
+                <a href="{{ $da->Source_Link }}" class="card">
                   <div class="card-body">
                     <div>
-                      <h5 class="card-title">D3-Manajemen Informatika</h5>
+                      <h5 class="card-title">{{ $da->Nama_Link }}</h5>
                       <span class="status rounded">Akademik</span>
                     </div>
                     <hr>
                     <p>Informasi:</p>
                     <div class="link-informasi">
-                      <p>Berisi informasi mengenai akademik dari prodi D3-Manajemen Informatika seperti KRS, Magang, Akademik</p>
+                      <p>{{ $da->Deskripsi }}</p>
                     </div>
                   </div>
                 </a>
-                <a href="https://app.ungu.in" class="card">
-                  <div class="card-body">
-                    <div>
-                      <h5 class="card-title">Ungu.in</h5>
-                      <span class="status rounded">Akademik</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                      <p>Berisi informasi mengenai akademik dari prodi D3-Manajemen Informatika seperti KRS, Magang, Akademik</p>
-                    </div>
-                  </div>
-                </a>
-                <a href="https://daak.amikom.ac.id/" class="card">
-                  <div class="card-body">
-                    <div>
-                      <h5 class="card-title">D3-Manajemen Informatika</h5>
-                      <span class="status rounded">Akademik</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                      <p>Berisi informasi mengenai akademik di Universitas Amikom Yogyakarta seperti penjadwalan kuliah, KRS, jadwal akademik, yudisium, dan administrasi</p>
-                    </div>
-                  </div>
-                </a>
-                <a href="https://mi.amikom.ac.id" class="card">
-                  <div class="card-body">
-                    <div>
-                      <h5 class="card-title">D3-Manajemen Informatika</h5>
-                      <span class="status rounded">Akademik</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                      <p>Berisi informasi mengenai akademik dari prodi D3-Manajemen Informatika seperti KRS, Magang, Akademik</p>
-                    </div>
-                  </div>
-                </a>
-                <a href="https://app.ungu.in" class="card">
-                  <div class="card-body">
-                    <div>
-                      <h5 class="card-title">Ungu.in</h5>
-                      <span class="status rounded">Akademik</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                      <p>Berisi informasi mengenai akademik dari prodi D3-Manajemen Informatika seperti KRS, Magang, Akademik</p>
-                    </div>
-                  </div>
-                </a>
-                <a href="https://daak.amikom.ac.id/" class="card">
-                  <div class="card-body">
-                    <div>
-                      <h5 class="card-title">D3-Manajemen Informatika</h5>
-                      <span class="status rounded">Akademik</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                      <p>Berisi informasi mengenai akademik di Universitas Amikom Yogyakarta seperti penjadwalan kuliah, KRS, jadwal akademik, yudisium, dan administrasi</p>
-                    </div>
-                  </div>
-                </a>
+                @endforeach
+
               </div>
             </div>
             <!-- List Card End -->

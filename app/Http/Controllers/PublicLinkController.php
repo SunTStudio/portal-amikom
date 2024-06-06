@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
+use App\Models\Default_link;
+use App\Models\Custom_Link;
+=======
 use App\Models\Custom;
+>>>>>>> 6600dc5479b876a8600f61c773b087e4bfc19a69
 use App\Models\Public_link;
 use Illuminate\Http\Request;
 
@@ -18,7 +23,10 @@ class PublicLinkController extends Controller
 
     public function dashboard()
     {
-        return view('portal/dashboard');
+        $data_akademik = Default_link::get();
+        // $data_custom = Custom_Link::get();
+
+        return view('portal/dashboard',compact('data_akademik'));
     }
 
     public function form()
@@ -28,7 +36,8 @@ class PublicLinkController extends Controller
 
     public function akademik()
     {
-        return view('portal/akademik');
+        $data_akademik = Default_link::get();
+        return view('portal/akademik',compact('data_akademik'));
     }
 
     public function custom_link()
