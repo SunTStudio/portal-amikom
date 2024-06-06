@@ -13,20 +13,22 @@ class Custom_Seeder extends Seeder
      */
     public function run(): void
     {
-<<<<<<< HEAD:database/seeders/Custom_Link_Seeder.php
-        Custom_Link::create([
+        Custom::create([
+            'id_pengguna' => 1,
             'Nama_Link' => 'Chat GPT',
             'Source_Link' => 'https://chatgpt.com/',
             'Deskripsi' => 'Merupakan Website AI untuk membantu mahasiswa.',
-=======
+            'id_kategori_link' => '3',
+        ]);
+
         Custom::create([
             'id_pengguna' => 1,
             'Nama_Link' => 'Dashboard MHS',
             'Source_Link' => 'https://auth.amikom.ac.id/mhs',
             'Deskripsi' => 'Merupakan Website Mahasiswa Amikom yang digunakan untuk keperluan akademis Mahasiswa.',
             'id_kategori_link' => '3',
->>>>>>> 6600dc5479b876a8600f61c773b087e4bfc19a69:database/seeders/Custom_Seeder.php
         ]);
+
         Custom::create([
             'id_pengguna' => 1,
             'Nama_Link' => 'Github',
@@ -34,6 +36,7 @@ class Custom_Seeder extends Seeder
             'Deskripsi' => 'Merupakan Website Kolaborasi tim untuk mengerjakan project programing bersama.',
             'id_kategori_link' => '3',
         ]);
+        
         Custom::create([
             'id_pengguna' => 1,
             'Nama_Link' => 'Template Figma UI Form',
