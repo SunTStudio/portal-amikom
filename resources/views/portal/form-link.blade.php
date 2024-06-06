@@ -120,31 +120,31 @@
               <h5 class="mb-5">PILIH KATEGORI</h5>
               <div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="kategori" value="akademik" id="akademik">
+                  <input class="form-check-input" type="radio" name="id_kategori_link" value="2" id="akademik">
                   <label class="form-check-label" for="akademik">
                     Akademik
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="kategori" value="custom" id="custom" >
+                  <input class="form-check-input" type="radio" name="id_kategori_link" value="4" id="custom" >
                   <label class="form-check-label" for="custom">
                     Custom
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="kategori" value="umum" id="umum">
+                  <input class="form-check-input" type="radio" name="id_kategori_link" value="3" id="umum">
                   <label class="form-check-label" for="umum">
                     Umum
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="kategori" value="jurnal" id="jurnal">
+                  <input class="form-check-input" type="radio" name="id_kategori_link" value="1" id="jurnal">
                   <label class="form-check-label" for="jurnal">
                     Jurnal
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="kategori" value="pribadi" id="pribadi">
+                  <input class="form-check-input" type="radio" name="id_kategori_link" value="5" id="pribadi">
                   <label class="form-check-label" for="pribadi">
                     Pribadi
                   </label>
