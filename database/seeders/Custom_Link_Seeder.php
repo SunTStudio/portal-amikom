@@ -14,9 +14,9 @@ class Custom_Link_Seeder extends Seeder
     public function run(): void
     {
         Custom_Link::create([
-            'Nama_Link' => 'Dashboard MHS',
-            'Source_Link' => 'https://auth.amikom.ac.id/mhs',
-            'Deskripsi' => 'Merupakan Website Mahasiswa Amikom yang digunakan untuk keperluan akademis Mahasiswa.',
+            'Nama_Link' => 'Chat GPT',
+            'Source_Link' => 'https://chatgpt.com/',
+            'Deskripsi' => 'Merupakan Website AI untuk membantu mahasiswa.',
         ]);
         Custom_Link::create([
             'Nama_Link' => 'Github',
