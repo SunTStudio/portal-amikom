@@ -22,8 +22,8 @@ class User extends Authenticatable
         'password',
     ];
 
-    public function custom_link(){
-        $this->hasMany(Custom_Link::class, 'id_pengguna');
+    public function custom(){
+        $this->hasMany(Custom::class, 'id_pengguna');
     }
 
     public function public_link(){
