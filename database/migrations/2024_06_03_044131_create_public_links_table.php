@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_pengguna_link'); // Changed to unsignedBigInteger
             $table->unsignedBigInteger('id_custom_link');
             $table->foreign('id_pengguna_link')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('id_custom_link')->references('id_custom')->on('custom_links')->onDelete('cascade');
+            $table->foreign('id_custom_link')->references('id_custom')->on('customs')->onDelete('cascade');
             $table->timestamps();
         });
     }

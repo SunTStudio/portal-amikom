@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Custom;
 use App\Models\Public_link;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,11 @@ class PublicLinkController extends Controller
     public function dashboard()
     {
         return view('portal/dashboard');
+    }
+
+    public function form()
+    {
+        return view('portal/form-link');
     }
 
     public function akademik()
@@ -38,9 +44,10 @@ class PublicLinkController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(request $request)
     {
-        //
+        Custom::create($request->all());
+        return redirect()->route('portal.custom');
     }
 
     /**

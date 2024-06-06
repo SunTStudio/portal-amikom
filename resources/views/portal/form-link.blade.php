@@ -85,7 +85,7 @@
               <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
                 <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">Log Out</a></li>
+                  <li><a class="dropdown-item" href="{{ route('portal.logout') }}">Log Out</a></li>
                 </ul>
               </div>
             </div>
@@ -99,55 +99,57 @@
             <div class="link-form col-6 p-5">
               <h5 class="mb-5">BUAT CUSTOM LINK BARU</h5>
               <div class="form-main">
-                <form action="" class="d-flex flex-direction-coloumn">
+                <form action="{{ route('portal.create') }}" method="GET" class="d-flex flex-direction-coloumn">
+                  <input type="hidden" name="id_pengguna" value="{{ session('nim') }}">
                   <div class="mb-3">
                     <label for="judul" id>Judul Link</label>
-                    <input type="text" class="form-control" placeholder="Judul Link">
+                    <input type="text" name="Nama_Link" class="form-control" placeholder="Judul Link">
                   </div>
                   <div class="mb-3">
                     <label for="link">Link Asli</label>
-                    <input type="text" class="form-control" placeholder="Link Asli">
+                    <input type="text" name="Source_Link" class="form-control" placeholder="Link Asli">
                   </div>
                   <div class="mb-5">
                     <label for="deskripsi">Deskripsi Link</label>
-                    <textarea type="text" class="form-control" placeholder="Deskripsi Link"></textarea>
+                    <textarea type="text" name="Deskripsi" class="form-control" placeholder="Deskripsi Link"></textarea>
                   </div>
-                  <button class="btn btn-primary">Buat Custom Link</button>
-                </form>
+                  <button type="submit" class="btn btn-primary">Buat Custom Link</button>
               </div>
             </div>
             <div class="kategori col-5 p-5">
               <h5 class="mb-5">PILIH KATEGORI</h5>
               <div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="akademik">
+                  <input class="form-check-input" type="radio" name="kategori" value="akademik" id="akademik">
                   <label class="form-check-label" for="akademik">
                     Akademik
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="custom" checked>
+                  <input class="form-check-input" type="radio" name="kategori" value="custom" id="custom" >
                   <label class="form-check-label" for="custom">
                     Custom
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="umum">
+                  <input class="form-check-input" type="radio" name="kategori" value="umum" id="umum">
                   <label class="form-check-label" for="umum">
                     Umum
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="jurnal">
+                  <input class="form-check-input" type="radio" name="kategori" value="jurnal" id="jurnal">
                   <label class="form-check-label" for="jurnal">
                     Jurnal
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="pribadi">
+                  <input class="form-check-input" type="radio" name="kategori" value="pribadi" id="pribadi">
                   <label class="form-check-label" for="pribadi">
                     Pribadi
                   </label>
+                </form>
+
                 </div>
               </div>
             </div>

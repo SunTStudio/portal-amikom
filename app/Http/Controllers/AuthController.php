@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -21,6 +22,8 @@ class AuthController extends Controller
         ]);
         
         if(Auth::attempt(['nim'=> $request->nim,'password' => $request->password])){
+            $users = User::where('nim',$request->nim)->first();
+            session(['nim' => $users->id]);
             return redirect()->route('portal.dashboard')->with('success','Anda berhasil login!');
         }else{
             return back()->with('error','Periksa Kembali Nim atau Password Anda!');
@@ -30,9 +33,10 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-
+        Session::forget('nim');
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+        Session::flush();
 
         return redirect()->route('portal.login')->with('success', 'Anda berhasil logout!');
     }

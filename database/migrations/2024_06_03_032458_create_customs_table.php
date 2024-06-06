@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('custom_links', function (Blueprint $table) {
+        Schema::create('customs', function (Blueprint $table) {
             $table->id('id_custom');
             $table->engine = 'InnoDB';
             $table->foreignId('id_pengguna')->constrained('users')->onDelete('cascade');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('custom_links');
+        Schema::dropIfExists('customs');
     }
 };
