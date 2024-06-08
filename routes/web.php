@@ -14,6 +14,8 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::middleware(['auth'])->group(function () {
     Route::get('/form', [PublicLinkController::class, 'form'])->name('portal.form');
     Route::get('/custom', [PublicLinkController::class, 'custom_link'])->name('portal.custom');
+    Route::get('/custom/search', [PublicLinkController::class, 'customSearch'])->name('portal.custom.search');
+    Route::get('/custom/{kategori}', [PublicLinkController::class, 'customKategori'])->name('portal.custom.kategori');
     Route::get('/custom-create', [PublicLinkController::class, 'create'])->name('portal.create');
     Route::get('/dashboard', [PublicLinkController::class, 'dashboard'])->name('portal.dashboard');
     Route::get('/akademik', [PublicLinkController::class, 'akademik'])->name('portal.akademik');

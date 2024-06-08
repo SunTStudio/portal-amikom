@@ -15,10 +15,10 @@ class Public_link extends Model
     ];
 
     public function user(){
-        $this->belongsTo(User::class, 'id_pengguna_link');
+        $this->belongsTo(User::class);
     }
 
     public function custom(){
-        $this->belongsTo(Custom::class, 'id_custom_link');
+        $this->belongsTo(Custom::class);
     }
 }

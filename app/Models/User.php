@@ -23,11 +23,11 @@ class User extends Authenticatable
     ];
 
     public function custom(){
-        $this->hasMany(Custom::class, 'id_pengguna');
+        $this->hasMany(Custom::class);
     }
 
     public function public_link(){
-        $this->hasMany(Public_link::class, 'id_pengguna_link');
+        $this->hasMany(Public_link::class);
     }
 
     /**

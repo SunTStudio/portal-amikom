@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('customs', function (Blueprint $table) {
-            $table->id('id_custom');
+            $table->id();
             $table->engine = 'InnoDB';
             $table->foreignId('id_pengguna')->constrained('users')->onDelete('cascade');
             $table->string('Nama_Link');
             $table->string('Source_Link');
             $table->string('Deskripsi');
-            $table->foreignId('id_kategori_link')->references('id_kategori')->on('kategoris')->onDelete('cascade');
+            $table->foreignId('id_kategori_link')->constrained('kategoris')->onDelete('cascade');
             $table->timestamps();
         });
     }

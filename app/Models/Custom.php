@@ -17,16 +17,18 @@ class Custom extends Model
         'id_kategori_link',
     ];
 
-
-    public function user(){
-        return $this->belongsTo(User::class, 'id_pengguna');
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
-    public function kategoris(){
-        return $this->belongsTo(Kategori::class, 'id_kategori_link', 'id_kategori');
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class, 'id_kategori_link');
     }
 
-    public function public_link(){
-        return $this->hasMany(Public_link::class, 'id_custom_link');
+    public function public_link()
+    {
+        return $this->hasMany(Public_link::class);
     }
 }
