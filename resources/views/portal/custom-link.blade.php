@@ -72,61 +72,7 @@ Custom Link
 <!-- Main Konten Start -->
 <!-- Tautan Pintasan Start -->
 @section('main-konten')
-
-<div class="pintasan-tautan mb-4">
-  <div class="judul-konten d-flex mb-5">
-    <h4>Pintasan Tautan</h4>
-    <div class="d-flex align-items-center">
-      <div class="tambah-tautan">
-        <button class="btn btn-primary me-4">Tambah Tautan</button>
-      </div>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Kategori
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="search d-flex justify-content-center mb-4">
-    <form class="" role="search">
-      <input class="form-control me-2 text-align-center" type="search" placeholder="Search your Custom Link here..." aria-label="Search">
-      <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-    </form>
-  </div>
-  <!-- List Card Start -->
-  <div class="row list-card">
-    <div class="col d-flex">
-      <a href="https://chatgpt.com/" class="card">
-        <div class="card-body">
-          <div>
-            <h5 class="card-title">Chat GPT</h5>
-            <span class="status rounded">Custom</span>
-          </div>
-          <hr>
-          <p>Informasi:</p>
-          <div class="link-informasi">
-            <p></p>
-          </div>
-        </div>
-      </a>
-      <a href="https://app.ungu.in/" class="card">
-        <div class="card-body">
-          <div>
-            <h5 class="card-title">Ungu.in</h5>
-            <span class="status rounded">Custom</span>
-          </div>
-<<<<<<< HEAD
-          <hr>
-          <p>Informasi:</p>
-          <div class="link-informasi">
-            <p></p>
-=======
-        </nav>
+          </nav>
         <!-- Navbar End -->
 
         <!-- Main Konten Start -->
@@ -182,64 +128,6 @@ Custom Link
               </div>
             </div>
             <!-- List Card End -->
->>>>>>> 99634a3f3d0aa8d2f1e0b39e469a6cd10fada074
-          </div>
-        </div>
-      </a>
-      <a class="card">
-        <div class="card-body">
-          <div>
-            <h5 class="card-title">D3-Manajemen Informatika</h5>
-            <span class="status rounded">Custom</span>
-          </div>
-          <hr>
-          <p>Informasi:</p>
-          <div class="link-informasi">
-            <p></p>
-          </div>
-        </div>
-      </a>
-      <a href="https://chatgpt.com/" class="card">
-        <div class="card-body">
-          <div>
-            <h5 class="card-title">Chat GPT</h5>
-            <span class="status rounded">Custom</span>
-          </div>
-          <hr>
-          <p>Informasi:</p>
-          <div class="link-informasi">
-            <p></p>
-          </div>
-        </div>
-      </a>
-      <a href="https://app.ungu.in/" class="card">
-        <div class="card-body">
-          <div>
-            <h5 class="card-title">Ungu.in</h5>
-            <span class="status rounded">Custom</span>
-          </div>
-          <hr>
-          <p>Informasi:</p>
-          <div class="link-informasi">
-            <p></p>
-          </div>
-        </div>
-      </a>
-      <a class="card">
-        <div class="card-body">
-          <div>
-            <h5 class="card-title">D3-Manajemen Informatika</h5>
-            <span class="status rounded">Custom</span>
-          </div>
-          <hr>
-          <p>Informasi:</p>
-          <div class="link-informasi">
-            <p></p>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
   <!-- List Card End -->
 </div>
 @endsection
