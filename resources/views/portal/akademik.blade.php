@@ -118,7 +118,7 @@ Portal Amikom
       </div>
       @endforeach
     </div>
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between px-5">
       <div class="d-flex gap-2">
         <p>Showing</p>
         {{ $data_akademik->firstItem() }}
