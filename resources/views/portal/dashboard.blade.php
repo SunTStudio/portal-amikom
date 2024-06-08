@@ -112,7 +112,7 @@ Portal Amikom
             </div>
             @endforeach
         </div>
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between px-5">
             <div class="d-flex gap-2">
                 <p>Showing</p>
                 {{ $data_akademik->firstItem() }}
@@ -120,12 +120,13 @@ Portal Amikom
                 {{ $data_akademik->lastItem() }}
             </div>
             <div>
-                {{ $data_akademik->links() }}
+                <a href="/akademik" class="btn btn-success">Lihat Selengkapnya</a>
             </div>
         </div>
     </div>
     <!-- List Card End -->
 </div>
+<hr>
 <!-- Tautan Amikom End -->
 
 <!-- Tautan Pintasan Start -->
@@ -134,7 +135,8 @@ Portal Amikom
         <h4>Pintasan Tautan</h4>
         <div class="d-flex align-items-center">
             <div class="tambah-tautan">
-                <button class="btn btn-primary me-4">Tambah Tautan</button>
+                <a href="{{ route('portal.form') }}" class="btn btn-primary me-4">Tambah Tautan</a>
+
             </div>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -150,53 +152,45 @@ Portal Amikom
     </div>
     <!-- List Card Start -->
     <div class="row list-card">
-        <div class="col d-flex">
-            <div href="https://chatgpt.com/" class="card">
+        <div class="col d-flex mb-4">
+            @foreach ( $data as $items )
+            <div class="card">
                 <div class="card-body">
                     <div>
-                        <h5 class="card-title">Chat GPT</h5>
-                        <span class="status rounded">Custom</span>
+                        <h5 class="card-title">{{ $items->Nama_Link }}</h5>
+                        <span class="status rounded">{{ $items->kategori->nama_kategori }}</span>
                     </div>
                     <hr>
                     <p>Informasi:</p>
                     <div class="link-informasi">
-                        <p></p>
+                        <p>{{ $items->Deskripsi}}</p>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <a href="" target="_blank" class="btn btn-primary">Visit Link</a>
+                <div class="card-footer d-flex justify-content-between">
+                    <a href="{{ $items->Source_Link }}" class="btn btn-primary">Visit Link</a>
+                    <div>
+                        <a href="" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></a>
+                        <a href="" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
+                    </div>
                 </div>
             </div>
-            <a href="https://app.ungu.in/" class="card">
-                <div class="card-body">
-                    <div>
-                        <h5 class="card-title">Ungu.in</h5>
-                        <span class="status rounded">Custom</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                        <p></p>
-                    </div>
-                </div>
-            </a>
-            <a class="card">
-                <div class="card-body">
-                    <div>
-                        <h5 class="card-title">D3-Manajemen Informatika</h5>
-                        <span class="status rounded">Custom</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                        <p></p>
-                    </div>
-                </div>
-            </a>
+            @endforeach
+        </div>
+        <div class="d-flex justify-content-between px-5">
+            <div class="d-flex gap-2">
+                <p>Showing</p>
+                {{ $data->firstItem() }}
+                <p>to</p>
+                {{ $data->lastItem() }}
+            </div>
+            <div>
+            <a href="/custom" class="btn btn-success">Lihat Selengkapnya</a>
+            </div>
         </div>
     </div>
     <!-- List Card End -->
 </div>
+<hr>
 <!-- Tautan Pintasan End -->
 
 <!-- Tautan Umum Start -->

@@ -21,9 +21,9 @@ class PublicLinkController extends Controller
     public function dashboard()
     {
         $data_akademik = Default_link::simplePaginate(6);
-        // $data_custom = Custom_Link::get();
+        $data = Custom::where('id_pengguna', session('nim'))->with('kategori')->simplePaginate(6)->withQueryString();
 
-        return view('portal/dashboard',compact('data_akademik'));
+        return view('portal/dashboard', compact('data_akademik', 'data'));
     }
 
     public function form()
@@ -34,27 +34,28 @@ class PublicLinkController extends Controller
     public function akademik()
     {
         $data_akademik = Default_link::simplePaginate(6);
-        return view('portal/akademik',compact('data_akademik'));
+        return view('portal/akademik', compact('data_akademik'));
     }
 
     public function custom_link()
     {
         $kategori = Kategori::all();
-        $data = Custom::where('id_pengguna',session('nim'))->with('kategori')->get();
-        return view('portal/custom-link',compact('data','kategori'));
+        $data = Custom::where('id_pengguna', session('nim'))->with('kategori')->simplePaginate(6);
+        return view('portal/custom-link', compact('data', 'kategori'));
     }
 
-    public function customSearch(Request $request){
-        $data = Custom::where('Nama_Link', 'LIKE' , '%' . $request->search . '%')->get();
+    public function customSearch(Request $request)
+    {
+        $data = Custom::where('Nama_Link', 'LIKE', '%' . $request->search . '%')->get();
         $kategori = Kategori::all();
-        return view('portal/custom-link',compact('data','kategori'));
+        return view('portal/custom-link', compact('data', 'kategori'));
     }
 
-    public function customKategori(Request $request, $kategori){
+    public function customKategori(Request $request, $kategori)
+    {
         $data = Custom::where('id_kategori_link', $kategori)->get();
         $kategori = Kategori::all();
-        return view('portal/custom-link',compact('data','kategori'));
-
+        return view('portal/custom-link', compact('data', 'kategori'));
     }
 
     public function umum()
