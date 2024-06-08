@@ -104,7 +104,7 @@
 .konten .main-konten .tautan-amikom .list-card .col,
 .konten .main-konten .pintasan-tautan .list-card .col,
 .konten .main-konten .tautan-umum .list-card .col {
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 1rem 0;
 }

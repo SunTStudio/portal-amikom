@@ -38,7 +38,9 @@ class PublicLinkController extends Controller
 
     public function custom_link()
     {
-        return view('portal/custom-link');
+
+        $data = Custom::where('id_pengguna',session('nim'))->with('kategori')->get();
+        return view('portal/custom-link',compact('data'));
     }
 
     public function umum()

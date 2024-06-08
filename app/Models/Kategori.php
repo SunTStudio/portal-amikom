@@ -13,7 +13,7 @@ class Kategori extends Model
         'nama_kategori',
     ];
 
-    public function custom(){
-        return $this->hasMany(Custom::class, 'id_kategori_link','id_kategori');
+    public function customs(){
+         return $this->hasMany(Custom::class, 'id_kategori_link');
     }
 }

@@ -125,84 +125,23 @@
             <!-- List Card Start -->
             <div class="row list-card">
             <div class="col d-flex">
-                <a href="https://chatgpt.com/" class="card">
-                  <div class="card-body">
+              @foreach ( $data as $items )
+                
+                <a href="{{ $items->Source_Link }}" class="card">
+                <div class="card-body">
                     <div>
-                      <h5 class="card-title">Chat GPT</h5>
-                      <span class="status rounded">Custom</span>
+                      <h5 class="card-title">{{ $items->Nama_Link }}</h5>
+                      <span class="status rounded">{{ $items->kategori->nama_kategori }}</span>
                     </div>
                     <hr>
                     <p>Informasi:</p>
                     <div class="link-informasi">
-                      <p></p>
+                      <p>{{ $items->Deskripsi}}</p>
                     </div>
                   </div>
                 </a>
-                <a href="https://app.ungu.in/" class="card">
-                  <div class="card-body">
-                    <div>
-                      <h5 class="card-title">Ungu.in</h5>
-                      <span class="status rounded">Custom</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                      <p></p>
-                    </div>
-                  </div>
-                </a>
-                <a class="card">
-                  <div class="card-body">
-                    <div>
-                      <h5 class="card-title">D3-Manajemen Informatika</h5>
-                      <span class="status rounded">Custom</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                      <p></p>
-                    </div>
-                  </div>
-                </a>
-                <a href="https://chatgpt.com/" class="card">
-                  <div class="card-body">
-                    <div>
-                      <h5 class="card-title">Chat GPT</h5>
-                      <span class="status rounded">Custom</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                      <p></p>
-                    </div>
-                  </div>
-                </a>
-                <a href="https://app.ungu.in/" class="card">
-                  <div class="card-body">
-                    <div>
-                      <h5 class="card-title">Ungu.in</h5>
-                      <span class="status rounded">Custom</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                      <p></p>
-                    </div>
-                  </div>
-                </a>
-                <a class="card">
-                  <div class="card-body">
-                    <div>
-                      <h5 class="card-title">D3-Manajemen Informatika</h5>
-                      <span class="status rounded">Custom</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                      <p></p>
-                    </div>
-                  </div>
-                </a>
+              @endforeach
+              
               </div>
             </div>
             <!-- List Card End -->
