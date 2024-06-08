@@ -70,7 +70,7 @@ Portal Amikom
 <!-- Navbar End -->
 
 <!-- Main Konten Start -->
-@section('mian-konten')
+@section('main-konten')
 
 <!-- Tautan Umum Start -->
 <div class="tautan-umum mb-4">

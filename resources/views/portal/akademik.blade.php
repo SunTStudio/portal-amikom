@@ -100,7 +100,7 @@ Portal Amikom
   <div class="row list-card">
     <div class="col d-flex mb-4">
       @foreach ($data_akademik as $da)
-      <a href="{{ $da->Source_Link }}" class="card">
+      <div href="{{ $da->Source_Link }}" class="card">
         <div class="card-body">
           <div>
             <h5 class="card-title">{{ $da->Nama_Link }}</h5>
@@ -112,7 +112,10 @@ Portal Amikom
             <p>{{ $da->Deskripsi }}</p>
           </div>
         </div>
-      </a>
+        <div class="card-footer">
+          <a href="{{ $da->Source_Link }}" target="_blank" class="btn btn-primary">Visit Link</a>
+        </div>
+      </div>
       @endforeach
     </div>
     <div class="d-flex justify-content-between">

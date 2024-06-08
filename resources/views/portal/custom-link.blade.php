@@ -73,178 +73,74 @@ Custom Link
 <!-- Tautan Pintasan Start -->
 @section('main-konten')
 
-<div class="pintasan-tautan mb-4">
-  <div class="judul-konten d-flex mb-5">
-    <h4>Pintasan Tautan</h4>
-    <div class="d-flex align-items-center">
-      <div class="tambah-tautan">
-        <button class="btn btn-primary me-4">Tambah Tautan</button>
-      </div>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Kategori
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
+</nav>
+<!-- Navbar End -->
+
+<!-- Main Konten Start -->
+<section class="container-fluid main-konten">
+
+  <!-- Tautan Pintasan Start -->
+  <div class="pintasan-tautan mb-4">
+    <div class="judul-konten d-flex mb-5">
+      <h4>Pintasan Tautan</h4>
+      <div class="d-flex align-items-center">
+        <div class="tambah-tautan">
+          <a href="{{ route('portal.form') }}" class="btn btn-primary me-4">Tambah Tautan</a>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Kategori
+          </button>
+          <ul class="dropdown-menu">
+            @foreach ($kategori as $tag )
+            <li><a class="dropdown-item" href="{{ route('portal.custom.kategori', ['kategori' => $tag->id]) }}">{{ $tag->nama_kategori }}</a></li>
+            @endforeach
+
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="search d-flex justify-content-center mb-4">
-    <form class="" role="search">
-      <input class="form-control me-2 text-align-center" type="search" placeholder="Search your Custom Link here..." aria-label="Search">
-      <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-    </form>
-  </div>
-  <!-- List Card Start -->
-  <div class="row list-card">
-    <div class="col d-flex">
-      <a href="https://chatgpt.com/" class="card">
-        <div class="card-body">
-          <div>
-            <h5 class="card-title">Chat GPT</h5>
-            <span class="status rounded">Custom</span>
-          </div>
-          <hr>
-          <p>Informasi:</p>
-          <div class="link-informasi">
-            <p></p>
-          </div>
-        </div>
-      </a>
-      <a href="https://app.ungu.in/" class="card">
-        <div class="card-body">
-          <div>
-            <h5 class="card-title">Ungu.in</h5>
-            <span class="status rounded">Custom</span>
-          </div>
-<<<<<<< HEAD
-          <hr>
-          <p>Informasi:</p>
-          <div class="link-informasi">
-            <p></p>
-=======
-        </nav>
-        <!-- Navbar End -->
-
-        <!-- Main Konten Start -->
-        <section class="container-fluid main-konten">
-
-          <!-- Tautan Pintasan Start -->
-          <div class="pintasan-tautan mb-4">
-            <div class="judul-konten d-flex mb-5">
-              <h4>Pintasan Tautan</h4>
-              <div class="d-flex align-items-center">
-                <div class="tambah-tautan">
-                  <a href="{{ route('portal.form') }}" class="btn btn-primary me-4">Tambah Tautan</a>
-                </div>
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Kategori
-                  </button>
-                  <ul class="dropdown-menu">
-                    @foreach ($kategori as $tag )
-                      <li><a class="dropdown-item" href="{{ route('portal.custom.kategori', ['kategori' => $tag->id]) }}">{{ $tag->nama_kategori }}</a></li>
-                    @endforeach
-                    
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="search d-flex justify-content-center mb-4">
-              <form class="d-flex" action="{{ route('portal.custom.search') }}" role="search">
-                <input class="form-control me-2 text-align-center" type="search" name="search" placeholder="Search your Custom Link here..." aria-label="Search">
-                <button class="btn btn-primary fw-medium" type="submit">Search</button>
-              </form>
-            </div>
-            <!-- List Card Start -->
-            <div class="row list-card">
-            <div class="col d-flex">
-              @foreach ( $data as $items )
-                
-                <a href="{{ $items->Source_Link }}" class="card">
-                <div class="card-body">
-                    <div>
-                      <h5 class="card-title">{{ $items->Nama_Link }}</h5>
-                      <span class="status rounded">{{ $items->kategori->nama_kategori }}</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                      <p>{{ $items->Deskripsi}}</p>
-                    </div>
-                  </div>
-                </a>
-              @endforeach
-              
-              </div>
-            </div>
-            <!-- List Card End -->
->>>>>>> 99634a3f3d0aa8d2f1e0b39e469a6cd10fada074
-          </div>
-        </div>
-      </a>
-      <a class="card">
-        <div class="card-body">
-          <div>
-            <h5 class="card-title">D3-Manajemen Informatika</h5>
-            <span class="status rounded">Custom</span>
-          </div>
-          <hr>
-          <p>Informasi:</p>
-          <div class="link-informasi">
-            <p></p>
-          </div>
-        </div>
-      </a>
-      <a href="https://chatgpt.com/" class="card">
-        <div class="card-body">
-          <div>
-            <h5 class="card-title">Chat GPT</h5>
-            <span class="status rounded">Custom</span>
-          </div>
-          <hr>
-          <p>Informasi:</p>
-          <div class="link-informasi">
-            <p></p>
-          </div>
-        </div>
-      </a>
-      <a href="https://app.ungu.in/" class="card">
-        <div class="card-body">
-          <div>
-            <h5 class="card-title">Ungu.in</h5>
-            <span class="status rounded">Custom</span>
-          </div>
-          <hr>
-          <p>Informasi:</p>
-          <div class="link-informasi">
-            <p></p>
-          </div>
-        </div>
-      </a>
-      <a class="card">
-        <div class="card-body">
-          <div>
-            <h5 class="card-title">D3-Manajemen Informatika</h5>
-            <span class="status rounded">Custom</span>
-          </div>
-          <hr>
-          <p>Informasi:</p>
-          <div class="link-informasi">
-            <p></p>
-          </div>
-        </div>
-      </a>
+    <div class="search d-flex justify-content-center mb-4">
+      <form class="d-flex" action="{{ route('portal.custom.search') }}" role="search">
+        <input class="form-control me-2 text-align-center" type="search" name="search" placeholder="Search your Custom Link here..." aria-label="Search">
+        <button class="btn btn-primary fw-medium" type="submit">Search</button>
+      </form>
     </div>
-  </div>
-  <!-- List Card End -->
-</div>
-@endsection
-<!-- Tautan Pintasan End -->
-<!-- Main Konten End -->
-<!-- Konten End -->
-@endsection
-<!-- Container end -->
+    <!-- List Card Start -->
+    <div class="row list-card">
+      <div class="col d-flex">
+        @foreach ( $data as $items )
+
+        <div class="card">
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">{{ $items->Nama_Link }}</h5>
+              <span class="status rounded">{{ $items->kategori->nama_kategori }}</span>
+            </div>
+            <hr>
+            <p>Informasi:</p>
+            <div class="link-informasi">
+              <p>{{ $items->Deskripsi}}</p>
+            </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <a href="{{ $items->Source_Link }}" class="btn btn-primary">Visit Link</a>
+              <div>
+                <a href="" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></a>
+                <a href="" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
+              </div>
+            </div>
+        </div>
+        @endforeach
+
+      </div>
+    </div>
+    <!-- List Card End -->
+    <!-- List Card End -->
+
+    @endsection
+    <!-- Tautan Pintasan End -->
+    <!-- Main Konten End -->
+    <!-- Konten End -->
+    @endsection
+    <!-- Container end -->
