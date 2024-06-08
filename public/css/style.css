@@ -120,6 +120,7 @@
 .konten .main-konten .pintasan-tautan .judul-konten,
 .konten .main-konten .tautan-umum .judul-konten {
     justify-content: space-between;
+    padding: 0 2rem;
     align-items: center;
 }
 
