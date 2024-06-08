@@ -48,14 +48,14 @@
               </div>
               <i class="fa-solid fa-chevron-right"></i>
             </a>
-            <a href="" class="disable btn btn-secondary d-flex align-items-center px-3 py-2">
+            <a href="/akademik" class="disable btn btn-secondary d-flex align-items-center px-3 py-2">
               <div>
                 <i class="fa-solid fa-earth-asia border border-2 p-1 me-2 rounded"></i>
                 <span class="link-disable"></i>Public Link</span>
               </div>
               <i class="fa-solid fa-chevron-right"></i>
             </a>
-            <a href="" class="disable btn btn-secondary d-flex align-items-center px-3 py-2">
+            <a href="/umum" class="disable btn btn-secondary d-flex align-items-center px-3 py-2">
               <div>
                 <i class="fa-solid fa-share border border-2 p-1 me-2 rounded"></i>
                 <sapn class="link-disable"></i>Sharing Link</span>
