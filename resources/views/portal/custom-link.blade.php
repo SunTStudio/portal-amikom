@@ -127,7 +127,17 @@ Custom Link
               <a href="" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></a>
               <a href="" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
             </div>
+<<<<<<< HEAD
+            <div class="card-footer d-flex justify-content-between">
+              <a href="{{ $items->Source_Link }}" class="btn btn-primary">Visit Link</a>
+              <div>
+                <a href="{{ route('portal.custom.edit', ['id' => $items->id]) }}" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></a>
+                <a href="{{ route('portal.custom.delete', ['id' => $items->id]) }}" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
+              </div>
+            </div>
+=======
           </div>
+>>>>>>> f8627f34f6fd0178d84b34a010f5d2069a67737e
         </div>
         @endforeach
       </div>

@@ -91,24 +91,30 @@ class PublicLinkController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Public_link $public_link)
+    public function edit(Public_link $public_link, $id)
     {
-        //
+        $data = Custom::find($id);
+        return view('portal.edit-link',compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Public_link $public_link)
+    public function update(Request $request, $id)
     {
-        //
+        $data = Custom::find($id);
+        $data->update($request->all());
+        return redirect()->route('portal.custom');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Public_link $public_link)
+    public function destroy(Public_link $public_link, $id)
     {
-        //
+        $link = Custom::find($id);
+        $link->delete();
+        return redirect()->route('portal.custom');
+
     }
 }
