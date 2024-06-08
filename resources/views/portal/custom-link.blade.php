@@ -67,14 +67,12 @@ Custom Link
     </div>
   </div>
 </nav>
-<!-- Navbar End -->
 
 <!-- Main Konten Start -->
 <!-- Tautan Pintasan Start -->
 @section('main-konten')
 
-</nav>
-<!-- Navbar End -->
+
 
 <!-- Main Konten Start -->
 <section class="container-fluid main-konten">
