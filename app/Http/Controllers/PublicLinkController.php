@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Default_link;
 use App\Models\Custom;
+use App\Models\Kategori;
 use App\Models\Public_link;
 use Illuminate\Http\Request;
 
@@ -38,9 +39,22 @@ class PublicLinkController extends Controller
 
     public function custom_link()
     {
-
+        $kategori = Kategori::all();
         $data = Custom::where('id_pengguna',session('nim'))->with('kategori')->get();
-        return view('portal/custom-link',compact('data'));
+        return view('portal/custom-link',compact('data','kategori'));
+    }
+
+    public function customSearch(Request $request){
+        $data = Custom::where('Nama_Link', 'LIKE' , '%' . $request->search . '%')->get();
+        $kategori = Kategori::all();
+        return view('portal/custom-link',compact('data','kategori'));
+    }
+
+    public function customKategori(Request $request, $kategori){
+        $data = Custom::where('id_kategori_link', $kategori)->get();
+        $kategori = Kategori::all();
+        return view('portal/custom-link',compact('data','kategori'));
+
     }
 
     public function umum()
