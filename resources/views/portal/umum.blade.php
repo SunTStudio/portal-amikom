@@ -110,7 +110,7 @@ Portal Amikom
           </div>
         </div>
         <div class="card-footer d-flex justify-content-between">
-          <a href="{{ $du->Source_Link }}" class="btn btn-primary">Visit Link</a>
+          <a href="{{ $du->Source_Link }}" target="_blank" class="btn btn-primary">Visit Link</a>
           <div>
             <a href="{{ route('portal.custom.edit', ['id' => $du->id]) }}" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></a>
             <a href="{{ route('portal.custom.delete', ['id' => $du->id]) }}" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
