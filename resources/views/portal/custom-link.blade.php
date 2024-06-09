@@ -75,90 +75,78 @@ Custom Link
 
 
 <!-- Main Konten Start -->
-<section class="container-fluid main-konten">
+<!-- Tautan Pintasan Start -->
+<div class="pintasan-tautan mb-4">
+  <div class="judul-konten d-flex mb-5">
+    <h4>Pintasan Tautan</h4>
+    <div class="d-flex align-items-center">
+      <div class="tambah-tautan">
+        <a href="{{ route('portal.form') }}" class="btn btn-primary me-4">Tambah Tautan</a>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Kategori
+        </button>
+        <ul class="dropdown-menu">
+          @foreach ($kategori as $tag )
+          <li><a class="dropdown-item" href="{{ route('portal.custom.kategori', ['kategori' => $tag->id]) }}">{{ $tag->nama_kategori }}</a></li>
+          @endforeach
 
-  <!-- Tautan Pintasan Start -->
-  <div class="pintasan-tautan mb-4">
-    <div class="judul-konten d-flex mb-5">
-      <h4>Pintasan Tautan</h4>
-      <div class="d-flex align-items-center">
-        <div class="tambah-tautan">
-          <a href="{{ route('portal.form') }}" class="btn btn-primary me-4">Tambah Tautan</a>
-        </div>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Kategori
-          </button>
-          <ul class="dropdown-menu">
-            @foreach ($kategori as $tag )
-            <li><a class="dropdown-item" href="{{ route('portal.custom.kategori', ['kategori' => $tag->id]) }}">{{ $tag->nama_kategori }}</a></li>
-            @endforeach
-
-          </ul>
-        </div>
+        </ul>
       </div>
     </div>
-    <div class="search d-flex justify-content-center mb-4">
-      <form class="d-flex" action="{{ route('portal.custom.search') }}" role="search">
-        <input class="form-control me-2 text-align-center" type="search" name="search" placeholder="Search your Custom Link here..." aria-label="Search">
-        <button class="btn btn-primary fw-medium" type="submit">Search</button>
-      </form>
-    </div>
-    <!-- List Card Start -->
-    <div class="row list-card">
-      <div class="col d-flex mb-4">
-        @foreach ( $data as $items )
+  </div>
+  <div class="search d-flex justify-content-center mb-4">
+    <form class="d-flex" action="{{ route('portal.custom.search') }}" role="search">
+      <input class="form-control me-2 text-align-center" type="search" name="search" placeholder="Search your Custom Link here..." aria-label="Search" value="{{ $request->get('search') }}">
+      <button class="btn btn-primary fw-medium" type="submit">Search</button>
+    </form>
+  </div>
+  <!-- List Card Start -->
+  <div class="row list-card">
+    <div class="col d-flex mb-4">
+      @foreach ( $data as $items )
 
-        <div class="card">
-          <div class="card-body">
-            <div>
-              <h5 class="card-title">{{ $items->Nama_Link }}</h5>
-              <span class="status rounded">{{ $items->kategori->nama_kategori }}</span>
-            </div>
-            <hr>
-            <p>Informasi:</p>
-            <div class="link-informasi">
-              <p>{{ $items->Deskripsi}}</p>
-            </div>
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <h5 class="card-title">{{ $items->Nama_Link }}</h5>
+            <span class="status rounded">{{ $items->kategori->nama_kategori }}</span>
           </div>
-          <div class="card-footer d-flex justify-content-between">
-            <a href="{{ $items->Source_Link }}" class="btn btn-primary">Visit Link</a>
-            <div>
-              <a href="" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></a>
-              <a href="" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
-            </div>
-<<<<<<< HEAD
-            <div class="card-footer d-flex justify-content-between">
-              <a href="{{ $items->Source_Link }}" class="btn btn-primary">Visit Link</a>
-              <div>
-                <a href="{{ route('portal.custom.edit', ['id' => $items->id]) }}" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></a>
-                <a href="{{ route('portal.custom.delete', ['id' => $items->id]) }}" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
-              </div>
-            </div>
-=======
+          <hr>
+          <p>Informasi:</p>
+          <div class="link-informasi">
+            <p>{{ $items->Deskripsi}}</p>
           </div>
->>>>>>> f8627f34f6fd0178d84b34a010f5d2069a67737e
         </div>
-        @endforeach
+        <div class="card-footer d-flex justify-content-between">
+          <a href="{{ $items->Source_Link }}" class="btn btn-primary">Visit Link</a>
+          <div>
+            <a href="{{ route('portal.custom.edit', ['id' => $items->id]) }}" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></a>
+            <a href="{{ route('portal.custom.delete', ['id' => $items->id]) }}" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
+          </div>
+        </div>
       </div>
-      <div class="d-flex justify-content-between">
-        <div class="d-flex gap-2">
-          <p>Showing</p>
-          {{ $data->firstItem() }}
-          <p>to</p>
-          {{ $data->lastItem() }}
-        </div>
-        <div>
-          {{ $data->links() }}
-        </div>
+      @endforeach
+    </div>
+    <div class="d-flex justify-content-between">
+      <div class="d-flex gap-2">
+        <p>Showing</p>
+        {{ $data->firstItem() }}
+        <p>to</p>
+        {{ $data->lastItem() }}
+      </div>
+      <div>
+        {{ $data->links() }}
       </div>
     </div>
-    <!-- List Card End -->
-    <!-- List Card End -->
+  </div>
+  <!-- List Card End -->
+  <!-- List Card End -->
 
-    @endsection
-    <!-- Tautan Pintasan End -->
-    <!-- Main Konten End -->
-    <!-- Konten End -->
-    @endsection
-    <!-- Container end -->
+  @endsection
+  <!-- Tautan Pintasan End -->
+  <!-- Main Konten End -->
+  <!-- Konten End -->
+  @endsection
+  <!-- Container end -->

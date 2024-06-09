@@ -79,21 +79,12 @@ Portal Amikom
 <div class="tautan-amikom mb-4">
   <div class="judul-konten d-flex mb-4">
     <h4>Tautan AMIKOM</h4>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Kategori
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </div>
+
   </div>
   <div class="search d-flex justify-content-center mb-4">
-    <form class="" role="search">
-      <input class="form-control me-2 text-align-center" type="search" placeholder="Search your Custom Link here..." aria-label="Search">
-      <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+    <form class="d-flex" action="{{ route('portal.akademik.search') }}" role="search">
+      <input class="form-control me-2 text-align-center" type="search" name="search" placeholder="Search your Custom Link here..." aria-label="Search" value="{{ $request->get('search') }}">
+      <button class="btn btn-primary fw-medium" type="submit">Search</button>
     </form>
   </div>
   <!-- List Card Start -->

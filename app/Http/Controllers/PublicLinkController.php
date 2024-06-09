@@ -21,9 +21,13 @@ class PublicLinkController extends Controller
     public function dashboard()
     {
         $data_akademik = Default_link::simplePaginate(6);
-        $data = Custom::where('id_pengguna', session('nim'))->with('kategori')->simplePaginate(6)->withQueryString();
+        $data = Custom::where('id_pengguna', session('nim'))->with('kategori')->simplePaginate(6);
+        $kategori = Kategori::all();
+        $data_umum = Custom::whereHas('kategori', function ($query) {
+            $query->whereNotIn('nama_kategori', ['Akademik', 'Custom']);
+        })->simplePaginate(6);
 
-        return view('portal/dashboard', compact('data_akademik', 'data'));
+        return view('portal/dashboard', compact('data_akademik','data_umum', 'data','kategori'));
     }
 
     public function form()
@@ -31,36 +35,56 @@ class PublicLinkController extends Controller
         return view('portal/form-link');
     }
 
-    public function akademik()
+    public function akademik(Request $request)
     {
         $data_akademik = Default_link::simplePaginate(6);
-        return view('portal/akademik', compact('data_akademik'));
+        return view('portal/akademik', compact('data_akademik', 'request'));
     }
 
-    public function custom_link()
+    public function akademikSearch(Request $request)
+    {
+        $data_akademik = Default_link::where('Nama_Link', 'LIKE', '%' . $request->search . '%')->simplePaginate(6);
+        $kategori = Kategori::all();
+        return view('portal/akademik', compact('data_akademik', 'kategori', 'request'));
+    }
+
+    public function custom_link(Request $request)
     {
         $kategori = Kategori::all();
         $data = Custom::where('id_pengguna', session('nim'))->with('kategori')->simplePaginate(6);
-        return view('portal/custom-link', compact('data', 'kategori'));
+        return view('portal/custom-link', compact('data', 'kategori', 'request'));
     }
 
     public function customSearch(Request $request)
     {
-        $data = Custom::where('Nama_Link', 'LIKE', '%' . $request->search . '%')->get();
+        $data = Custom::where('Nama_Link', 'LIKE', '%' . $request->search . '%')->simplePaginate(6);
         $kategori = Kategori::all();
-        return view('portal/custom-link', compact('data', 'kategori'));
+        return view('portal/custom-link', compact('data', 'kategori', 'request'));
     }
 
     public function customKategori(Request $request, $kategori)
     {
-        $data = Custom::where('id_kategori_link', $kategori)->get();
+        $data = Custom::where('id_kategori_link', $kategori)->simplePaginate(6);
         $kategori = Kategori::all();
-        return view('portal/custom-link', compact('data', 'kategori'));
+        return view('portal/custom-link', compact('data', 'kategori', 'request'));
     }
 
-    public function umum()
+    public function umum(Request $request)
+    {    
+        $kategori = Kategori::all();
+        $data_umum = Custom::whereHas('kategori', function ($query) {
+            $query->whereNotIn('nama_kategori', ['Akademik', 'Custom']);
+        })->simplePaginate(6);
+    
+    
+        return view('portal/umum', compact('data_umum', 'kategori', 'request'));
+    }
+
+    public function umumSearch(Request $request)
     {
-        return view('portal/umum');
+        $data_umum = Public_link::where('Nama_Link', 'LIKE', '%' . $request->search . '%')->simplePaginate(6);
+        $kategori = Kategori::all();
+        return view('portal/akademik', compact('data_umum', 'kategori', 'request'));
     }
 
     /**
@@ -94,7 +118,7 @@ class PublicLinkController extends Controller
     public function edit(Public_link $public_link, $id)
     {
         $data = Custom::find($id);
-        return view('portal.edit-link',compact('data'));
+        return view('portal.edit-link', compact('data'));
     }
 
     /**
@@ -115,6 +139,5 @@ class PublicLinkController extends Controller
         $link = Custom::find($id);
         $link->delete();
         return redirect()->route('portal.custom');
-
     }
 }

@@ -25,8 +25,5 @@ class kategoriSeeder extends Seeder
         Kategori::create([
             'nama_kategori' => 'Custom',
         ]);
-        Kategori::create([
-            'nama_kategori' => 'Pribadi',
-        ]);
     }
 }

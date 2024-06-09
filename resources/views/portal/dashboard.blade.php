@@ -169,8 +169,8 @@ Portal Amikom
                 <div class="card-footer d-flex justify-content-between">
                     <a href="{{ $items->Source_Link }}" class="btn btn-primary">Visit Link</a>
                     <div>
-                        <a href="" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></a>
-                        <a href="" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
+                        <a href="{{ route('portal.custom.edit', ['id' => $items->id]) }}" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></a>
+                        <a href="{{ route('portal.custom.delete', ['id' => $items->id]) }}" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
                     </div>
                 </div>
             </div>
@@ -184,7 +184,7 @@ Portal Amikom
                 {{ $data->lastItem() }}
             </div>
             <div>
-            <a href="/custom" class="btn btn-success">Lihat Selengkapnya</a>
+                <a href="/custom" class="btn btn-success">Lihat Selengkapnya</a>
             </div>
         </div>
     </div>
@@ -210,49 +210,43 @@ Portal Amikom
     </div>
     <!-- List Card Start -->
     <div class="row list-card">
-        <div class="col d-flex">
-            <div href="" class="card">
+        <div class="col d-flex mb-4">
+            @foreach ($data_umum as $du )
+            <div class="card">
                 <div class="card-body">
                     <div>
-                        <h5 class="card-title">Chat GPT</h5>
-                        <span class="status rounded">Umum</span>
+                        <h5 class="card-title">{{ $du->Nama_Link }}</h5>
+                        <span class="status rounded">{{ $du->kategori->nama_kategori }}</span>
                     </div>
                     <hr>
                     <p>Informasi:</p>
                     <div class="link-informasi">
-                        <p></p>
+                        <p>{{ $du->Deskripsi}}</p>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <a href="" target="_blank" class="btn btn-primary">Visit Link</a>
+                <div class="card-footer d-flex justify-content-between">
+                    <a href="{{ $du->Source_Link }}" class="btn btn-primary">Visit Link</a>
+                    <div>
+                        <a href="{{ route('portal.custom.edit', ['id' => $du->id]) }}" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></a>
+                        <a href="{{ route('portal.custom.delete', ['id' => $du->id]) }}" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
+                    </div>
                 </div>
             </div>
-            <a href="https://app.ungu.in/" class="card">
-                <div class="card-body">
-                    <div>
-                        <h5 class="card-title">Ungu.in</h5>
-                        <span class="status rounded">Umum</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                        <p></p>
-                    </div>
-                </div>
-            </a>
-            <a href="https://daak.amikom.ac.id/" class="card">
-                <div class="card-body">
-                    <div>
-                        <h5 class="card-title">D3-Manajemen Informatika</h5>
-                        <span class="status rounded">Umum</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                        <p></p>
-                    </div>
-                </div>
-            </a>
+            @endforeach
+        </div>
+        <div class="d-flex justify-content-between px-5">
+            <div class="d-flex gap-2">
+                <p>Showing</p>
+                {{ $data_umum->firstItem() }}
+                <p>to</p>
+                {{ $data_umum->lastItem() }}
+            </div>
+            <div>
+                {{ $data_umum->links() }}
+            </div>
+            <div>
+                <a href="/umum" class="btn btn-success">Lihat Selengkapnya</a>
+            </div>
         </div>
     </div>
     <!-- List Card End -->
