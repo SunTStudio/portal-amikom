@@ -4,11 +4,21 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\PublicLinkController;
+use App\Http\Controllers\SocialiteController;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 
 // Rute untuk login
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('portal.login');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+// login untuk google
+Route::get('/auth/redirect', [SocialiteController::class,'redirect'])->name('google.redirect');
+ 
+Route::get('/auth/google/callback', [SocialiteController::class,'callback']);
 
 // Rute yang dilindungi dengan middleware auth
 Route::middleware(['auth'])->group(function () {

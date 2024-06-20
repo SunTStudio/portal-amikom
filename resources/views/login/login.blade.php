@@ -40,7 +40,7 @@
                     </form>
                     <div id="sign-up-by-google" class="text-center">
                         <p class="fw-bold m-2"><small>OR</small></p>
-                        <a href="/sign-up-google" class="btn btn-white border border-secondary ps-4 pe-4 fw-medium text-center"><i class="fa-brands fa-google"></i> Sign Up By Goggle</a>
+                        <a href="{{ route('google.redirect') }}" class="btn btn-white border border-secondary ps-4 pe-4 fw-medium text-center"><i class="fa-brands fa-google"></i> Sign Up By Goggle</a>
                     </div>
                 </div>
             </div>
