@@ -20,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'nim',
         'password',
+        'email',
         'google_token',
         'google_refresh_token',
     ];

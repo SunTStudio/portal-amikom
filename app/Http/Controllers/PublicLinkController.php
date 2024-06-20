@@ -21,7 +21,9 @@ class PublicLinkController extends Controller
     public function dashboard()
     {
         $data_akademik = Default_link::simplePaginate(6);
-        $data = Custom::where('id_pengguna', session('nim'))->with('kategori')->simplePaginate(6);
+        $data = Custom::where('id_pengguna', session('nim'))->whereHas('kategori', function ($query) {
+        $query->where('nama_kategori', 'Custom'); // Sesuaikan 'name' dengan kolom yang relevan
+    })->with('kategori')->simplePaginate(6);
         $kategori = Kategori::all();
         $data_umum = Custom::whereHas('kategori', function ($query) {
             $query->whereNotIn('nama_kategori', ['Akademik', 'Custom']);

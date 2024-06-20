@@ -52,10 +52,10 @@ Portal Amikom
 <nav class="navbar bg-body-tertiary px-4 py-3 bg-white">
     <div class="container-fluid">
         <a class="navbar-brand">Portal AMIKOM Link</a>
-        <form class="d-flex" role="search">
+        {{-- <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search your Custom Link here..." aria-label="Search">
             <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-        </form>
+        </form> --}}
         <div class="profile d-flex">
             <img src="/img/profile.png" alt="profile">
             <div>
@@ -65,7 +65,7 @@ Portal Amikom
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">Log Out</a></li>
+                    <li><a class="dropdown-item" href="{{ route('portal.logout') }}">Log Out</a></li>
                 </ul>
             </div>
         </div>
@@ -138,16 +138,7 @@ Portal Amikom
                 <a href="{{ route('portal.form') }}" class="btn btn-primary me-4">Tambah Tautan</a>
 
             </div>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Kategori
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </div>
+            
         </div>
     </div>
     <!-- List Card Start -->
@@ -197,16 +188,7 @@ Portal Amikom
 <div class="tautan-umum mb-4">
     <div class="judul-konten d-flex mb-4">
         <h4>Tautan Umum</h4>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Kategori
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-        </div>
+        
     </div>
     <!-- List Card Start -->
     <div class="row list-card">
@@ -226,10 +208,10 @@ Portal Amikom
                 </div>
                 <div class="card-footer d-flex justify-content-between">
                     <a href="{{ $du->Source_Link }}" target="_blank" class="btn btn-primary" >Visit Link</a>
-                    <div>
+                    {{-- <div>
                         <a href="{{ route('portal.custom.edit', ['id' => $du->id]) }}" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></a>
                         <a href="{{ route('portal.custom.delete', ['id' => $du->id]) }}" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             @endforeach

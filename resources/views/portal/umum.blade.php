@@ -61,7 +61,7 @@ Portal Amikom
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
         <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="#">Log Out</a></li>
+          <li><a class="dropdown-item" href="{{ route('portal.logout') }}">Log Out</a></li>
         </ul>
       </div>
     </div>
@@ -111,10 +111,10 @@ Portal Amikom
         </div>
         <div class="card-footer d-flex justify-content-between">
           <a href="{{ $du->Source_Link }}" target="_blank" class="btn btn-primary">Visit Link</a>
-          <div>
+          {{-- <div>
             <a href="{{ route('portal.custom.edit', ['id' => $du->id]) }}" class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></a>
             <a href="{{ route('portal.custom.delete', ['id' => $du->id]) }}" class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></a>
-          </div>
+          </div> --}}
         </div>
       </div>
       @endforeach

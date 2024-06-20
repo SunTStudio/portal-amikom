@@ -29,12 +29,14 @@ class SocialiteController extends Controller
                 'google_refresh_token' => $socialUser->refreshToken,
             ]);
             Auth::login($registeredUser);
+            session(['nim' => $users->id]);
 
             return redirect()->route('portal.dashboard')->with('success', 'Anda berhasil login!');
         }
 
         // Log in the user
         Auth::login($registeredUser);
+        session(['nim' => $users->id]);
 
         return redirect()->route('portal.dashboard')->with('success', 'Anda berhasil login!');
     }

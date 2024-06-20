@@ -61,7 +61,7 @@ Custom Link
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
         <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="#">Log Out</a></li>
+          <li><a class="dropdown-item" href="{{ route('portal.logout') }}">Log Out</a></li>
         </ul>
       </div>
     </div>
