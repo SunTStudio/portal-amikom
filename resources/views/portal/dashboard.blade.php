@@ -92,36 +92,39 @@ Portal Amikom
     </div>
     <!-- List Card Start -->
     <div class="row list-card">
-        <div class="col d-flex mb-4">
-            @foreach ($data_akademik as $da)
-            <div class="card">
-                <div class="card-body">
-                    <div>
-                        <h5 class="card-title">{{ $da->Nama_Link }}</h5>
-                        <span class="status rounded">Akademik</span>
-                    </div>
-                    <hr>
-                    <p>Informasi:</p>
-                    <div class="link-informasi">
-                        <p>{{ $da->Deskripsi }}</p>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <a href="{{ $da->Source_Link }}" target="_blank" class="btn btn-primary">Visit Link</a>
-                </div>
+        <div class="col d-flex mb-4" id="data-akademik">
+        {{-- @foreach ($data_akademik as $da)
+        <div href="{{ $da->Source_Link }}" class="card">
+            <div class="card-body">
+            <div>
+                <h5 class="card-title">{{ $da->Nama_Link }}</h5>
+                <span class="status rounded">Akademik</span>
             </div>
-            @endforeach
+            <hr>
+            <p>Informasi:</p>
+            <div class="link-informasi">
+                <p>{{ $da->Deskripsi }}</p>
+            </div>
+            </div>
+            <div class="card-footer">
+            <a href="{{ $da->Source_Link }}" target="_blank" class="btn btn-primary">Visit Link</a>
+            </div>
+        </div>
+        @endforeach --}}
         </div>
         <div class="d-flex justify-content-between px-5">
-            <div class="d-flex gap-2">
-                <p>Showing</p>
-                {{ $data_akademik->firstItem() }}
-                <p>to</p>
-                {{ $data_akademik->lastItem() }}
-            </div>
-            <div>
-                <a href="/akademik" class="btn btn-success">Lihat Selengkapnya</a>
-            </div>
+        
+        {{-- <div>
+            {{ $data_akademik->links() }}
+        </div> --}}
+        <button class="btn btn-secondary" id="prev-page">Previous</button>
+        <div class="d-flex gap-2">
+            <p>Showing</p>
+            <p id="now-page">Showing</p>
+            <p>to</p>
+            <p id="last-page">to</p>
+        </div>
+        <button class="btn btn-secondary" id="next-page">Next</button>
         </div>
     </div>
     <!-- List Card End -->
@@ -241,6 +244,88 @@ Portal Amikom
 <!-- Container end -->
 
 @section('custom_script')~
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  $(document).ready(function() {
+    var currentPage = 1;
+    var itemsPerPage = 5;  // Ubah sesuai dengan jumlah item per halaman yang Anda inginkan
+    var data;
+    // Memanggil AJAX untuk mengambil data pertama kali
+    fetchData();
+
+    function fetchData() {
+        $.ajax({
+            url: 'https://gist.githubusercontent.com/SunTStudio/a7b10c96cd9c5f12522cbef43f76ab48/raw/6c8a15e8ec5f205b695d766852071a86ec218368/default-link.json',
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                console.log(response);
+                data = response;
+                displayData();
+            },
+            error: function(error) {
+                console.error('Error:', error);
+            }
+        });
+    }
+
+    function displayData() {
+        const dataAkademik = $('#data-akademik');
+        const nowPage = $('#now-page');
+        const lastPage = $('#last-page');
+        dataAkademik.empty();  // Kosongkan kontainer sebelum menambahkan data baru
+
+        // Menghitung indeks awal dan akhir untuk halaman saat ini
+        var startIndex = (currentPage - 1) * itemsPerPage;
+        var endIndex = startIndex + itemsPerPage;
+        var paginatedData = data.slice(startIndex, endIndex);
+
+        // Looping melalui data yang dihalaman sesuai dengan perhitungan startIndex dan endIndex
+        paginatedData.forEach(item => {
+            const dataCard = `<div class="card">
+                <div class="card-body">
+                    <div>
+                        <h5 class="card-title">${item.Nama_Link}</h5>
+                        <span class="status rounded">Akademik</span>
+                    </div>
+                    <hr>
+                    <p>Informasi:</p>
+                    <div class="link-informasi">
+                        <p>${item.Deskripsi}</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="${item.Source_Link}" target="_blank" class="btn btn-primary">Visit Link</a>
+                </div>
+            </div>`;
+            const dataNow = `<p>${currentPage}</p>`;
+            const dataLast = `<p>${Math.ceil(data.length/3)}</p>`;
+            nowPage.empty();
+            lastPage.empty();
+            nowPage.append(dataNow);
+            lastPage.append(dataLast);
+            dataAkademik.append(dataCard);
+        });
+    }
+
+    // Tombol navigasi untuk halaman sebelumnya dan berikutnya
+    $('#prev-page').click(function() {
+        if (currentPage > 1) {
+            currentPage--;
+            displayData();
+        }
+    });
+
+    $('#next-page').click(function() {
+        var totalPages = Math.ceil(data.length / itemsPerPage);
+        if (currentPage < totalPages) {
+            currentPage++;
+            displayData();
+        }
+    });
+});
+
+</script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @if (SESSION('success'))
 <script>
@@ -250,5 +335,8 @@ Portal Amikom
         text: "{{ SESSION('success') }}",
     });
 </script>
+
 @endif
+
+
 @endsection
